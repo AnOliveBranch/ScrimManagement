@@ -8,11 +8,11 @@ module.exports = {
 	async execute(guild) {
 		const guildDetails = await getGuildDetails(guild);
 
-		const logChannel = await client.channels.fetch(logChannelId);
+		const logChannel = await guild.client.channels.fetch(logChannelId);
 		const logger = new Logger(logChannel);
 
 		const fileManager = new FileManager();
-		await fileManager.createGuildFiles(guild);
+		await fileManager.createGuildFiles(guild.id);
 
 		logger.logMessage(`Bot joined a new guild: \n\`\`\`${guildDetails}\`\`\``);
 	}
