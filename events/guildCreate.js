@@ -10,7 +10,7 @@ module.exports = {
 
 		const logChannel = await client.channels.fetch(logChannelId);
 		const logger = new Logger(logChannel);
-		logger.logMessage(guild.client, `Bot joined a new guild: \n\`\`\`${guildDetails}\`\`\``);
+		logger.logMessage(`Bot joined a new guild: \n\`\`\`${guildDetails}\`\`\``);
 
 		const fileManager = new FileManager();
 		fileManager.createGuildFiles(guild);
